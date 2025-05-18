@@ -1,0 +1,136 @@
+** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background-color: #f7bfd4;
+  padding: 30px 20px;
+  text-align: center;
+  color: #444;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: rgb(245, 194, 194);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  color: #080808;
+  margin-bottom: 10px;
+}
+
+.icon-box {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.card ol {
+  margin-left: 20px;
+  line-height: 1.7em;
+}
+
+code, pre {
+  background: #eeb1b1;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-family: monospace;
+  display: inline-block;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #eeb1b1;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #080506;
+  text-align: center;
+  padding: 15px;
+  color: #000000;
+  font-size: 0.9em;
+}
+
+/* Gambar kecil yang bisa diklik */
+.popup-trigger {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 1em auto;
+}
+
+.popup-trigger:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay pop-up penuh layar */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  padding-top: 60px;
+}
+
+/* Gambar besar dalam pop-up */
+.popup-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Tombol close (X) */
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: red;
+}

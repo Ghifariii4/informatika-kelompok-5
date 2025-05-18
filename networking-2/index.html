@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belajar Routing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="title">Routing</h1>
+    <p class="subtitle">Mengenal alat dan jenis-jenis routing jaringan komputer</p>
+  </header>
+
+  <section class="content">
+    <div class="card">
+      <h2>Apa itu Routing?</h2>
+      <p>Routing adalah proses pengiriman data dari satu jaringan ke jaringan lain. Saat kita mengirim pesan lewat internet, data itu sebenarnya dipecah menjadi bagian-bagian kecil (disebut packet) dan dikirim melewati banyak perangkat jaringan sampai tiba di tujuannya. Routing memastikan data itu sampai ke alamat yang benar.
+
+Routing bekerja seperti petunjuk jalan di peta, yang menunjukkan rute terbaik dari titik A ke titik B. Dalam jaringan komputer, ini dilakukan oleh perangkat yang disebut router.
+</p>
+    </div>
+
+   <div class="card">
+  <h2>Alat untuk Routing</h2>
+  <ul>
+    <li><button class="tool-btn" onclick="openPopup('router')">Router</button></li>
+    <li><button class="tool-btn" onclick="openPopup('switch')">Switch Layer 3</button></li>
+    <li><button class="tool-btn" onclick="openPopup('pc')">PC / Server</button></li>
+  </ul>
+</div>
+
+
+    <div class="card pink">
+      <h2>Jenis-Jenis Routing</h2>
+      <div class="routing-type" onclick="toggleDetail('statis')">
+        ➤ <strong>Routing Statis</strong>
+        <p id="statis" class="hidden">Routing ini dikonfigurasi secara manual oleh administrator. Cocok untuk jaringan kecil karena sederhana namun tidak otomatis menyesuaikan kondisi jaringan.</p>
+      </div>
+      <div class="routing-type" onclick="toggleDetail('dinamis')">
+        ➤ <strong>Routing Dinamis</strong>
+        <p id="dinamis" class="hidden">Routing ini menggunakan protokol seperti RIP, OSPF, dan BGP untuk menyesuaikan rute secara otomatis berdasarkan kondisi jaringan.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="" alt="Gambar alat routing">
+    <p id="popup-text"></p>
+  </div>
+</div>
+
+</body>
+</html>

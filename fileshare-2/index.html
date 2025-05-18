@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Konfigurasi File Sharing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Konfigurasi File Sharing</h1>
+    <p>Windows ke Windows & Windows ke Linux (Samba)</p>
+  </header>
+
+  <main>
+    <!-- BAGIAN WINDOWS KE WINDOWS -->
+    <section class="card">
+      <h2>Windows ke Windows</h2>
+    
+      <ol>
+        <li>Buka drive <code>C:</code> atau <code>D:</code> dan buat nama folder yang diinginkan.</li>
+        <img src="gambar 1.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+
+        <li>Klik kanan > <strong>Properties</strong> > buka tab <strong>Sharing</strong> > klik <strong>Advanced Sharing</strong>.</li>
+        <img src="gambar 2.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Centang <strong>“Share this folder”</strong>, lalu klik <strong>Permissions</strong>.</li>
+        <img src="gambar 3.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Centang semua <strong>Allow</strong> (Full Control, Change, Read), lalu klik Apply.</li>
+        <img src="gambar 4.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Matikan <strong>Password Protected Sharing</strong> di: Control Panel > Network and Sharing > All Networks.</li>
+        <img src="gambar 5.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Buka CMD dan ketik <code>ipconfig</code> untuk mengecek IP address Windows.</li>
+        <img src="gambar 6.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Dari PC lain, buka File Explorer dan akses IP: <code>\\192.168.xx.xx</code>.</li>
+        <img src="gambar 7.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+
+       <!-- Pop-up gambar -->
+<div id="image-popup" class="popup">
+  <span class="close">&times;</span>
+  <img class="popup-content" id="popup-img">
+</div>
+      </ol>
+    </section>
+
+    <!-- BAGIAN WINDOWS KE LINUX -->
+    <section class="card">
+      <h2>Windows ke Linux (Samba)</h2>
+      <ol>
+        <li>Buka terminal Linux dan login sebagai root: <code>su -</code></li>
+        <img src="image 1.jpg"Ilustrasi File Sharing" class="popup-trigger">
+        <li>Edit IP statis di <code>/etc/network/interfaces</code>.</li>
+        <img src="image 2.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Install Samba dengan perintah: <code>apt-get install samba</code> dan cek ip  jika digit ke 3 ip linux sudah sama dengan digit ke 3 ip windows maka runtutan cara dapat dilanjutkan.</li>
+        <img src="image 3.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Edit konfigurasi Samba untuk masuk ke direktori ketik
+          <code>cd /etc/samba</code>, setelah itu ketik <code>nano smb.conf</code> 
+          <img src="image 4.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+          untuk masuk ke nano dan scroll paling bawah untuk mengetik :
+          <pre>
+[SAMBA_SERVER]
+path = /home/user/sambashare
+valid users = samba1
+writable = yes
+browseable = yes
+guest ok = no
+          </pre>
+        </li>
+        <li>Buat user: <code>useradd -m -d/home/samba samba1</code> lalu <code>smbpasswd -a samba1</code> masukan password yang di inginkan (password tidak akan terlihat tetapi tetap ter-input)</li>
+        <img src="image 5.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Restart Samba dengan perintah: <code>/etc/init.d/samba-ad-dc restart</code></li>
+        <img src="image 6.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">
+        <li>Dari Windows, akses Linux dengan mengetik <code>\\192.168.xx.xx</code> lalu buka samba server dan masukan user dan password yang sudah di buat sebelumnya <code>samba1,123</code>.</li>
+        <img src="image 7.jpg" alt="Ilustrasi File Sharing" class="popup-trigger">  
+    </ol>
+    </section>
+  </main>
+
+  <script>
+  const popup = document.getElementById('image-popup');
+  const popupImg = document.getElementById('popup-img');
+  const closeBtn = document.querySelector('.close');
+  const triggers = document.querySelectorAll('.popup-trigger');
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      popup.style.display = 'block';
+      popupImg.src = this.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

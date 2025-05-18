@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konfigurasi Mikrotik</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-pink-50 text-gray-800 font-[Quicksand]">
+
+  <!-- Hero Section -->
+  <header class="scallop text-center text-white py-20 px-4">
+    <h1 class="text-5xl font-bold font-[Pacifico]">Konfigurasi Mikrotik</h1>
+    <p class="mt-4 text-xl">Internet Gateway Routing</p>
+  </header>
+
+  <!-- Tagline Section -->
+  <section class="text-center py-10 px-6">
+    <h2 class="text-2xl font-semibold italic">
+      Pada penerapannya kami menggunakan <span class="font-bold">hardware Mikrotik</span> tipe hEX lite.
+    </h2>
+    <p class="mt-4 text-gray-600">Tujuan konfigurasi adalah mengatur lalu lintas jaringan agar data dari satu perangkat bisa mengalir ke jaringan lain melalui Mikrotik. </br> Mikrotik berperan sebagai router yang membagi akses internet ke klien-klien yang terhubung.</p>
+    <div class="mt-6 flex justify-center gap-2">
+      <span class="text-pink-400">🌸</span>
+      <span class="text-green-400">🌿</span>
+      <span class="text-yellow-400">🌼</span>
+    </div>
+  </section>
+
+  <!-- Software Mikrotik Slider -->
+  <section class="px-6 py-10">
+    <h3 class="text-center text-3xl font-bold mb-6">Software Mikrotik</h3>
+    <div class="relative w-full max-w-md mx-auto overflow-hidden">
+      <div id="slider" class="flex transition-transform duration-500 ease-in-out w-full transform translate-x-[0%]">
+        <div class="w-full shrink-0 px-4">
+          <div class="bg-white rounded-2xl p-6 shadow text-center flex flex-col justify-center min-h-[600px]">
+            <h4 class="font-semibold text-lg mb-4">1. Download & Install WinBox</h4>
+            <a href="https://download.mikrotik.com/routeros/winbox/3.41/winbox64.exe" download class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full shadow hover:bg-pink-600 mb-3">WinBox 4.0beta20 (Windows)</a>
+            <div>
+              <a href="https://mikrotik.com/download" target="_blank" class="text-pink-600 font-bold hover:underline">Download dengan OS lainnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-4">
+          <div class="bg-white rounded-2xl p-6 shadow text-center">
+            <h4 class="font-semibold text-lg mb-4">2. Login</h4>
+            <img src="/image/Login WinBox.jpg" class="rounded-xl mb-4 mx-auto" alt="Login">
+            <p class="text-sm text-gray-500">Masukkan IP dan Password sesuai Mikrotik masing-masing</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute top-1/2 left-0 -translate-y-1/2">
+        <button onclick="slide(-1)" class="bg-pink-300 text-white p-2 rounded-full shadow">←</button>
+      </div>
+      <div class="absolute top-1/2 right-0 -translate-y-1/2">
+        <button onclick="slide(1)" class="bg-pink-300 text-white p-2 rounded-full shadow">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Configuration Content -->
+  <main class="px-4 space-y-10 max-w-3xl mx-auto">
+    
+    <section class="card">
+      <h2>Konfigurasi PC Client</h2>
+      <ol class="space-y-6">
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Setting IP address ether1 & ether2</p>
+          <code>ip address add address=192.168.54.1/24 interface=ether2</code>
+          <code>ip address add address=192.168.0.74/24 interface=ether1</code>
+          <img src="/image/setting ip address.png" alt="Step 2" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Cek <strong>IP address</strong></p>
+          <code>ip address print</code>
+          <img src="/image/cek IP address.png" alt="Step 3" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Setting IP DNS</p>
+          <code>ip dns set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4</code>
+          <img src="/image/setting ip dns.png" alt="Step 4" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Cek <strong>IP DNS</strong></p>
+          <code>ip dns print</code>
+          <img src="/image/setting ip dns.png" alt="Step 5" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Setting IP Route</p>
+          <code>ip route add gateway=192.168.0.1 distance=1</code>
+          <img src="/image/setting ip route.png" alt="Step 6" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Cek <strong>IP Route</strong></p>
+          <code>ip route print</code>
+          <img src="/image/cek ip route.png" alt="Step 7" class="mt-3 rounded-xl w-full max-w-md">
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Konfigurasi PC Client</h2>
+      <ol>
+        <li class="bg-pink-100 p-4 rounded-xl shadow">
+          <p class="mb-2 font-semibold">Setting IP address</p>
+          <img src="/image/setting ip pc klien.png" class="rounded-xl mb-4 mx-auto" alt="Setting IP">
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- Hasil Section -->
+  <section class="bg-blue-100 w-full py-10 px-6">
+    <h3 class="text-center text-3xl font-bold mb-8">Hasil</h3>
+    <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white rounded-2xl p-4 shadow hasil-card">
+        <p class="font-semibold text-center mb-3">Kedua IP bisa saling ping</p>
+        <img src="/image/hasil ping1.png" alt="ping" class="rounded-xl mb-3 w-full h-[300px] object-cover">
+        <img src="/image/hasil ping2.png" alt="ping" class="rounded-xl mb-3 w-full h-[300px] object-cover">
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow hasil-card">
+        <p class="font-semibold text-center mb-3">Bisa mengakses internet</p>
+        <img src="/image/hasil akses internet.png" alt="akses internet" class="rounded-xl mb-3">
+        <img src="/image/hasil akses internet2.png" alt="akses internet" class="rounded-xl mb-3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="scallop-footer bg-pink-300 w-full py-10 px-6 text-white mt-12">
+    <h4 class="text-2xl font-bold text-center mb-4">Sekian Terimakasih</h4>
+    <div class="flex flex-wrap justify-center gap-3 mt-6">
+      <span class="bg-white text-pink-600 font-semibold px-4 py-2 rounded-full">Mantap</span>
+      <span class="bg-white text-blue-600 font-semibold px-4 py-2 rounded-full">Keren</span>
+      <span class="bg-white text-yellow-600 font-semibold px-4 py-2 rounded-full">Semangat</span>
+      <span class="bg-white text-green-600 font-semibold px-4 py-2 rounded-full">Gege</span>
+    </div>
+  </footer>
+</body>
+</html>

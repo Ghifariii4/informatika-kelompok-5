@@ -1,0 +1,248 @@
+:root {
+    --primary: #f7cac9;
+    --secondary: #c5e1a5;
+    --tertiary: #b3e5fc;
+    --quaternary: #d1c4e9;
+    --background: #f8f9fa;
+    --text: #37474f;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background-color: var(--quaternary);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.nav-btn {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nav-btn.active {
+    background-color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.network-container {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.network-container.active {
+    display: block;
+}
+
+.network-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.interactive-area {
+    background-color: var(--tertiary);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.device {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s;
+}
+
+.device:hover {
+    transform: scale(1.1);
+}
+
+.connection {
+    position: absolute;
+    background-color: var(--quaternary);
+    height: 4px;
+    transform-origin: left center;
+}
+
+.quiz-container {
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.quiz-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.quiz-option {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz-option:hover {
+    background-color: var(--primary);
+}
+
+.quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    min-height: 20px;
+}
+
+.info-box {
+    padding: 15px;
+    background-color: var(--quaternary);
+    border-radius: 8px;
+    margin-top: 15px;
+    display: none;
+}
+
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+
+.interactive-message {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 100;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    background-color: var(--quaternary);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary);
+}
+
+.device.active {
+    background-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.quiz-option.correct {
+    background-color: var(--secondary);
+}
+
+.quiz-option.incorrect {
+    background-color: var(--primary);
+}
+
+.device-info {
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    max-width: 200px;
+    z-index: 10;
+    display: none;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

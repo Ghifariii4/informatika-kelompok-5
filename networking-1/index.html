@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mengenal Networking</h1>
+        <p>Belajar konsep jaringan komputer dengan cara interaktif</p>
+    </header>
+    
+    <nav>
+        <button class="nav-btn active" data-target="internet">Internet</button>
+        <button class="nav-btn" data-target="wan">WAN</button>
+        <button class="nav-btn" data-target="lan">LAN</button>
+        <button class="nav-btn" data-target="pan">PAN</button>
+    </nav>
+    
+    <div class="container">
+        <!-- Internet Section -->
+        <div id="internet" class="network-container active">
+            <div class="network-box">
+                <h2>Internet <span class="network-type-indicator type-internet">Global</span></h2>
+                <p>Internet adalah jaringan komputer global yang menghubungkan miliaran perangkat di seluruh dunia. Ini adalah "jaringan dari jaringan" yang terdiri dari jaringan pribadi, publik, akademik, bisnis, dan pemerintah.</p>
+                <p>Internet memungkinkan pertukaran informasi dan komunikasi antara perangkat di seluruh dunia menggunakan protokol standar seperti TCP/IP.</p>
+            </div>
+            
+            <div class="interactive-area" id="internet-interactive">
+                <div class="device" id="device1" style="top: 50px; left: 100px;">Server</div>
+                <div class="device" id="device2" style="top: 200px; left: 250px;">Laptop</div>
+                <div class="device" id="device3" style="top: 80px; left: 400px;">Cloud</div>
+                <div class="device" id="device4" style="top: 180px; left: 500px;">Phone</div>
+                
+                <div class="interactive-message" id="internet-message">
+                    Klik pada perangkat untuk melihat fungsinya dalam Internet
+                </div>
+            </div>
+            
+            <div class="info-box" id="internet-info">
+                <h3>Fakta Menarik:</h3>
+                <ul>
+                    <li>Internet pertama kali dikembangkan pada tahun 1960-an dengan proyek ARPANET</li>
+                    <li>Setiap hari, triliunan byte data ditransfer melalui Internet</li>
+                    <li>Lebih dari 4,9 miliar orang di seluruh dunia menggunakan Internet</li>
+                </ul>
+            </div>
+            
+            <div class="button-container">
+                <button class="action-btn" id="internet-show-info">Tampilkan Fakta</button>
+                <button class="action-btn" id="internet-quiz">Mulai Kuis</button>
+                <button class="action-btn" id="simulate-internet">Simulasi Data</button>
+            </div>
+            
+            <div class="quiz-container hidden" id="internet-quiz-container">
+                <div class="quiz-question">Apa protokol utama yang digunakan Internet?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">TCP/IP</div>
+                    <div class="quiz-option">HTTP/SSL</div>
+                    <div class="quiz-option">FTP/SMTP</div>
+                    <div class="quiz-option">DNS/DHCP</div>
+                </div>
+                <div class="quiz-result"></div>
+            </div>
+        </div>
+        
+        <!-- WAN Section -->
+        <div id="wan" class="network-container">
+            <div class="network-box">
+                <h2>Wide Area Network (WAN) <span class="network-type-indicator type-wan">Kota/Negara</span></h2>
+                <p>WAN adalah jaringan yang mencakup area geografis yang luas dan menghubungkan beberapa LAN yang terpisah secara fisik. WAN biasanya dikelola oleh penyedia layanan telekomunikasi.</p>
+                <p>Contoh WAN termasuk jaringan perusahaan yang menghubungkan kantor-kantor di berbagai kota atau negara.</p>
+            </div>
+            
+            <div class="interactive-area" id="wan-interactive">
+                <div class="device" id="wan-device1" style="top: 50px; left: 80px;">Kantor A</div>
+                <div class="device" id="wan-device2" style="top: 180px; left: 200px;">Router</div>
+                <div class="device" id="wan-device3" style="top: 70px; left: 350px;">ISP</div>
+                <div class="device" id="wan-device4" style="top: 200px; left: 500px;">Kantor B</div>
+                
+                <div class="interactive-message" id="wan-message">
+                    Klik pada perangkat untuk melihat fungsinya dalam WAN
+                </div>
+            </div>
+            
+            <div class="info-box" id="wan-info">
+                <h3>Karakteristik WAN:</h3>
+                <ul>
+                    <li>Mencakup area geografis yang luas (kota, negara, benua)</li>
+                    <li>Menggunakan teknologi seperti leased line, satellite, atau fiber optic</li>
+                    <li>Kecepatan transmisi biasanya lebih lambat dibanding LAN</li>
+                </ul>
+            </div>
+            
+            <div class="button-container">
+                <button class="action-btn" id="wan-show-info">Tampilkan Info</button>
+                <button class="action-btn" id="wan-quiz">Mulai Kuis</button>
+                <button class="action-btn" id="simulate-wan">Simulasi Data</button>
+            </div>
+            
+            <div class="quiz-container hidden" id="wan-quiz-container">
+                <div class="quiz-question">Perangkat yang biasanya menghubungkan WAN adalah?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Router</div>
+                    <div class="quiz-option">Switch</div>
+                    <div class="quiz-option">Hub</div>
+                    <div class="quiz-option">Repeater</div>
+                </div>
+                <div class="quiz-result"></div>
+            </div>
+        </div>
+        
+        <!-- LAN Section -->
+        <div id="lan" class="network-container">
+            <div class="network-box">
+                <h2>Local Area Network (LAN) <span class="network-type-indicator type-lan">Gedung</span></h2>
+                <p>LAN adalah jaringan komputer yang mencakup area geografis yang terbatas seperti rumah, kantor, atau gedung kampus. LAN biasanya dimiliki dan dikelola secara pribadi.</p>
+                <p>LAN memungkinkan perangkat berbagi sumber daya seperti printer, file, dan koneksi internet.</p>
+            </div>
+            
+            <div class="interactive-area" id="lan-interactive">
+                <div class="device" id="lan-device1" style="top: 60px; left: 120px;">PC 1</div>
+                <div class="device" id="lan-device2" style="top: 150px; left: 70px;">PC 2</div>
+                <div class="device" id="lan-device3" style="top: 100px; left: 280px;">Switch</div>
+                <div class="device" id="lan-device4" style="top: 60px; left: 440px;">Printer</div>
+                <div class="device" id="lan-device5" style="top: 180px; left: 400px;">Server</div>
+                
+                <div class="interactive-message" id="lan-message">
+                    Klik pada perangkat untuk melihat fungsinya dalam LAN
+                </div>
+            </div>
+            
+            <div class="info-box" id="lan-info">
+                <h3>Keuntungan LAN:</h3>
+                <ul>
+                    <li>Kecepatan transfer data tinggi</li>
+                    <li>Biaya pemeliharaan rendah</li>
+                    <li>Keamanan yang lebih baik karena akses terbatas</li>
+                </ul>
+            </div>
+            
+            <div class="button-container">
+                <button class="action-btn" id="lan-show-info">Tampilkan Info</button>
+                <button class="action-btn" id="lan-quiz">Mulai Kuis</button>
+                <button class="action-btn" id="simulate-lan">Simulasi Data</button>
+            </div>
+            
+            <div class="quiz-container hidden" id="lan-quiz-container">
+                <div class="quiz-question">Perangkat utama yang digunakan untuk menghubungkan perangkat dalam LAN adalah?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Switch</div>
+                    <div class="quiz-option">Router</div>
+                    <div class="quiz-option">Gateway</div>
+                    <div class="quiz-option">Modem</div>
+                </div>
+                <div class="quiz-result"></div>
+            </div>
+        </div>
+        
+        <!-- PAN Section -->
+        <div id="pan" class="network-container">
+            <div class="network-box">
+                <h2>Personal Area Network (PAN) <span class="network-type-indicator type-pan">Personal</span></h2>
+                <p>PAN adalah jaringan komputer yang digunakan untuk komunikasi antar perangkat elektronik personal dalam jangkauan terbatas, biasanya beberapa meter saja.</p>
+                <p>Teknologi PAN umumnya menggunakan koneksi Bluetooth, NFC, atau Infrared untuk menghubungkan perangkat seperti smartphone, laptop, headphone, dan smartwatch.</p>
+            </div>
+            
+            <div class="interactive-area" id="pan-interactive">
+                <div class="device" id="pan-device1" style="top: 120px; left: 250px;">Smartphone</div>
+                <div class="device" id="pan-device2" style="top: 50px; left: 150px;">Headset</div>
+                <div class="device" id="pan-device3" style="top: 180px; left: 150px;">Smartwatch</div>
+                <div class="device" id="pan-device4" style="top: 50px; left: 350px;">Laptop</div>
+                <div class="device" id="pan-device5" style="top: 180px; left: 350px;">Speaker</div>
+                
+                <div class="interactive-message" id="pan-message">
+                    Klik pada perangkat untuk melihat fungsinya dalam PAN
+                </div>
+            </div>
+            
+            <div class="info-box" id="pan-info">
+                <h3>Teknologi PAN Populer:</h3>
+                <ul>
+                    <li>Bluetooth - Jangkauan hingga 10 meter</li>
+                    <li>NFC (Near Field Communication) - Jangkauan beberapa sentimeter</li>
+                    <li>Infrared - Membutuhkan garis pandang langsung</li>
+                </ul>
+            </div>
+            
+            <div class="button-container">
+                <button class="action-btn" id="pan-show-info">Tampilkan Info</button>
+                <button class="action-btn" id="pan-quiz">Mulai Kuis</button>
+                <button class="action-btn" id="simulate-pan">Simulasi Data</button>
+            </div>
+            
+            <div class="quiz-container hidden" id="pan-quiz-container">
+                <div class="quiz-question">Teknologi yang paling umum digunakan dalam PAN adalah?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Bluetooth</div>
+                    <div class="quiz-option">Wi-Fi</div>
+                    <div class="quiz-option">Ethernet</div>
+                    <div class="quiz-option">DSL</div>
+                </div>
+                <div class="quiz-result"></div>
+            </div>
+        </div>
+        
+        <!-- Network Comparison -->
+        <div class="network-box">
+            <h2>Perbandingan Jaringan</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Jaringan</th>
+                        <th>Jangkauan</th>
+                        <th>Kecepatan</th>
+                        <th>Contoh Penggunaan</th>
+                        <th>Teknologi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Internet</td>
+                        <td>Global</td>
+                        <td>Bervariasi</td>
+                        <td>World Wide Web, Email, Cloud Computing</td>
+                        <td>TCP/IP, HTTP, DNS</td>
+                    </tr>
+                    <tr>
+                        <td>WAN</td>
+                        <td>Antar kota/negara</td>
+                        <td>10 Mbps - 10 Gbps</td>
+                        <td>Jaringan perusahaan multinasional, Provider Internet</td>
+                        <td>Fiber Optic, Microwave, Satellite</td>
+                    </tr>
+                    <tr>
+                        <td>LAN</td>
+                        <td>Dalam gedung</td>
+                        <td>100 Mbps - 10 Gbps</td>
+                        <td>Kantor, Kampus, Rumah</td>
+                        <td>Ethernet, Wi-Fi</td>
+                    </tr>
+                    <tr>
+                        <td>PAN</td>
+                        <td>1-10 meter</td>
+                        <td>1-24 Mbps</td>
+                        <td>Perangkat personal</td>
+                        <td>Bluetooth, NFC, Infrared</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Website Pembelajaran Interaktif - Konsep Jaringan Komputer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

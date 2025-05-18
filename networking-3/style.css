@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.card ol {
+  margin-left: 20px;
+  line-height: 1.7em;
+}
+
+code, pre {
+  background: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-family: monospace;
+  display: inline-block;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #f8f9fa;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #fcb8d2;
+  text-align: center;
+  padding: 15px;
+  color: #333;
+  font-size: 0.9em;
+}
+
+.scallop {
+  background: repeating-linear-gradient(
+    -45deg,
+    #f472b6,
+    #f472b6 20px,
+    #f9a8d4 20px,
+    #f9a8d4 40px
+  );
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.scallop-footer {
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+section.card {
+  margin-bottom: 3rem;
+  max-width: 800px;   
+  margin-left: auto;        
+  margin-right: auto;      
+}
+
+section.bg-blue-100 {
+  margin-top: 3rem;
+}
+
+section.bg-blue-100,
+footer.scallop-footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+@media (min-width: 768px) {
+  .hasil-card {
+    transform: scale(0.94);
+    transform-origin: top center;
+  }
+}
+
+.hasil-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+ol li img {
+  border: 1px solid #e2e8f0;
+  background: white;
+}
